@@ -1,8 +1,8 @@
 /*
  * LCD.c
  *
- * Created: 2/23/2018 4:38:26 PM
- *  Author: Mohamed Zaghlol
+ * 
+ * 
  */ 
 #include "LCD.h"
 #define  F_CPU 8000000UL 
