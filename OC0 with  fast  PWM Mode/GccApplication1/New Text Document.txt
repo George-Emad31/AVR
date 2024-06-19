@@ -1,0 +1,37 @@
+/*
+ * GccApplication1.c
+ *
+ * Created: 4/7/2024 7:37:14 PM
+ * Author : georg
+ */ 
+#include <avr/io.h>
+#include "EEPROM_DRIVER.h"
+#define F_CPU 8000000UL
+#include <util/delay.h>
+#include "LED.h"
+#include "std_macros.h"
+#include "button.h"
+#include "seven segment.h"
+
+int main(void)
+{
+	
+	seven_seg_vinit_BCD('D','L');
+	unsigned char COUNTER ;
+
+	while(1)
+	{
+		for (COUNTER=0;COUNTER<9;COUNTER++){
+			
+	   seven_segment_write_Cathode_BCD('D',0,COUNTER);
+	   _delay_ms(1000);
+		}
+		
+		if (COUNTER>9)
+		{
+			COUNTER=0;
+		}
+	   
+ }
+
+}
